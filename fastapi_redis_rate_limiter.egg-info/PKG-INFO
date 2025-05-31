@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: fastapi-redis-rate-limiter
+Version: 0.1.0
+Summary: A FastAPI middleware for distributed rate limiting using Redis.
+Author-email: Your Name <your.email@example.com>
+Project-URL: Homepage, https://github.com/nxvtej/fastapi-redis-rate-limiter
+Project-URL: Bug Tracker, https://github.com/nxvtej/fastapi-redis-rate-limiter/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: FastAPI
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: redis[hiredis]
+Requires-Dist: python-dotenv
+Requires-Dist: uvicorn
+
+# FastAPI Redis Rate Limiter Middleware

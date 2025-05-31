@@ -1,0 +1,32 @@
+# fastapi-redis-rate-limiter/pyproject.toml
+[project]
+name = "fastapi-redis-rate-limiter"
+version = "0.1.0"
+authors = [
+  { name="Your Name", email="your.email@example.com" },
+]
+description = "A FastAPI middleware for distributed rate limiting using Redis."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Framework :: FastAPI",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "fastapi",
+    "redis[hiredis]", # [hiredis] for faster parsing, optional but good
+    "python-dotenv", # For local development .env, will be a dev dependency later
+    "uvicorn", # For example app
+]
+
+[project.urls]
+"Homepage" = "https://github.com/nxvtej/fastapi-redis-rate-limiter"
+"Bug Tracker" = "https://github.com/nxvtej/fastapi-redis-rate-limiter/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
