@@ -18,10 +18,17 @@ classifiers = [
 ]
 dependencies = [
     "fastapi",
-    "redis[hiredis]", # [hiredis] for faster parsing, optional but good
-    "python-dotenv", # For local development .env, will be a dev dependency later
-    "uvicorn", # For example app
+    "redis[hiredis]", 
+    "python-dotenv", 
+    "uvicorn",       
+    "pytest",       
+    "httpx",        
 ]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto" 
+asyncio_default_fixture_loop_scope = "session"
+
 
 [project.urls]
 "Homepage" = "https://github.com/nxvtej/fastapi-redis-rate-limiter"

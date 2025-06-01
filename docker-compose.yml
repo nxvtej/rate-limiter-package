@@ -1,0 +1,32 @@
+# docker-compose.yml
+
+version: "3.8"
+
+services:
+  # FastAPI Application Service
+  app:
+    build: . # Build the image using the Dockerfile in the current directory
+    # If you want to use a specific tag for your image, uncomment and modify:
+    # image: my-fastapi-app:latest
+    ports:
+      - "8000:8000" # Map host port 8000 to container port 8000
+    volumes:
+      - .:/app # Mount the current project directory into the container for live code changes
+    environment:
+      # Optional: set environment variables for your app if needed
+      - REDIS_URL=redis://localhost:6379/0 # How your app connects to the Redis service
+    depends_on:
+      - redis # Ensure redis starts before the app
+
+  # Redis Service
+  redis:
+    image: redis:latest # Use the latest official Redis image
+    ports:
+      - "6379:6379" # Map host port 6379 to container port 6379 (optional, but good for direct access)
+    command: ["redis-server", "--appendonly", "yes"] # Ensure data persistence (for real use)
+    volumes:
+      - redis_data:/data # Persistent volume for Redis data
+
+# Define named volumes for data persistence
+volumes:
+  redis_data:
